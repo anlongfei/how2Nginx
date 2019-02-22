@@ -14,6 +14,10 @@ CUR_DIR=`pwd`
 SRC=${CUR_DIR}/nginx-1.15.8
 
 cd ${SRC}
-${CUR_DIR}/nginx-1.15.8/configure --prefix=${CUR_DIR}/output --without-http_rewrite_module --without-http_gzip_module \
+${CUR_DIR}/nginx-1.15.8/configure \
+    --prefix=${CUR_DIR}/output \
+    --without-http_rewrite_module \
+    --without-http_gzip_module \
+    --add-module=${SRC}/src/hello_module \
     && make -j4 \
     && make install

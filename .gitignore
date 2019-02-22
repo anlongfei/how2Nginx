@@ -2,3 +2,4 @@ Makefile
 objs
 sbin
 logs
+pid
